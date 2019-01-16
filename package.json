@@ -1,0 +1,31 @@
+{
+  "name": "graphql-backend-marketplace",
+  "version": "1.0.0",
+  "description": "GraphQL API for MongoDB. Handles products and shopping carts.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "mongoose": "^5.4.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alerobertson/GraphQL-Backend-Marketplace.git"
+  },
+  "keywords": [
+    "graphql",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Alexander J Robertson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alerobertson/GraphQL-Backend-Marketplace/issues"
+  },
+  "homepage": "https://github.com/alerobertson/GraphQL-Backend-Marketplace#readme"
+}
