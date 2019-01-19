@@ -58,11 +58,19 @@ Node Modules:
   Express
   Express-GraphQL
   Mongoose
-  
- This will not work using my database due to it being ip-whitelisted.
+
+
+
+
+
+
+
+
+
+
  
- Hello! I constructed this as a solution the 2019 Shopify Internship Challenge for Backend Developer. I just wanted to quickly go over my thought process in developing this, and what I would do differently if given some more details.
------------------------------------------------------------------------------------------------------------------------------- 
+Hello! I constructed this as a solution the 2019 Shopify Internship Challenge for Backend Developer. I just wanted to quickly go over my thought process in developing this, and what I would do differently if given some more details.
+
 I'll be going over a few thoughts I had on the tasks laid out for me:
 
   `The ability to fetch products all at once or one at a time:`
@@ -81,6 +89,8 @@ One of the optional query parameters I created was "in_stock" When set to true, 
   
 In the original assignment, we only needed to reduce the inventory by one, but I felt it should be a bit more flexible. Let the user purchase multiple of the same item and verify that there is enough inventory to do so.
   
+  
+If I were to change anything, I would maybe change inventory and quantity to be floats. Perhaps the store sells things in KGs or grams and that would simply logic at all. Also, I think a cart should automatically be created by "addToCart" if no cart exists.
     
   
     
