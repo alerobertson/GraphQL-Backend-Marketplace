@@ -6,8 +6,7 @@
 	I made this to bundle all MongoDB statements as to not clutter the main script.
 */
 const mongoose = require('mongoose')
-const connection = mongoose.createConnection('mongodb+srv://graphql_user:graphql_password@' +
-	'test-cluster-khuin.gcp.mongodb.net/test', { useNewUrlParser: true })
+const connection = mongoose.createConnection('mongodb://graphql:shopify2019@ds161074.mlab.com:61074/shopifyinternship2019', { useNewUrlParser: true })
 const DB = require('../models/marketplace')
 
 // ------ MongoDB Collections ------ ------
@@ -85,7 +84,7 @@ function getCart(cart_id) {
 
 function newProduct(product) {
 	Products.collection.insertOne(product)
-	return `Added product: ${object.title}`
+	return `Added product: ${product.title}`
 }
 
 function createCart() {

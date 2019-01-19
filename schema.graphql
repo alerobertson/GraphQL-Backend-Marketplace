@@ -2,7 +2,7 @@
 Queries will return information taken directly from the database
 """
 type Query {
-	"Returns a list of avaliable products from the database. All product parameters are optional."
+	"Returns a list of available products from the database. All product parameters are optional."
 	products(id: ID, title: String,
 		in_stock: Boolean): [DatabaseProduct]
 		

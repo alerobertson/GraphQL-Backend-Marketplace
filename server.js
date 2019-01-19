@@ -10,7 +10,7 @@ const express = require('express')
 const graphqlHTTP = require('express-graphql')
 const { buildSchema } = require('graphql')
 const DB = require('./models/marketplace')
-const translator = require('./controllers/marketplace-controller')
+const controller = require('./controllers/marketplace-controller')
 const fs = require('fs')
 const path = require('path')
 const graphql_schema = fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8")
@@ -25,34 +25,34 @@ const root = {
 	// Retrieve products based on query parameters.
 	// Blank query is also acceptable.
 	products: (query) => {
-		return translator.getProducts(query)
+		return controller.getProducts(query)
 	},
 	
 	// Retrieve cart based on cart_id
 	cart: (query) => {
-		return translator.getCart(query.id)
+		return controller.getCart(query.id)
 	},
 	
 	// Insert product info into database.
 	newProduct: (object) => {
-		return translator.newProduct(object.product)
+		return controller.newProduct(object.product)
 	},
 	
 	// Create a new cart object in database.
 	// Returns the ID of the cart.
 	createCart: () => {
-		return translator.createCart()
+		return controller.createCart()
 	},
 	
 	// Insert product and quantity into card object
 	addToCart: (object) => {
-		return translator.addToCart(object.cart_id, object.product_id, object.quantity)
+		return controller.addToCart(object.cart_id, object.product_id, object.quantity)
 	},
 	
 	// Remove quantity from database inventory and delete cart.
 	// Only completes if there is enough inventory.
 	purchaseCart: (object) => {
-		return translator.purchaseCart(object.cart_id)
+		return controller.purchaseCart(object.cart_id)
 	}
 }
 
