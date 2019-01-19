@@ -52,6 +52,17 @@ Once you have items in your cart, you will be able to purchase it. The purchase 
 ```  
 Doing this will delete the cart from the database and update the inventory_count of relevant products.
   
+It is worth noting you can retrieve products by ID or Title.  
+```
+query {
+    products(id: "Product ID" title: "Product Title") {
+      id
+      title
+      price
+      inventory_count
+    }
+  }
+```  
 
 Node Modules:
   GraphQL
@@ -90,7 +101,7 @@ One of the optional query parameters I created was "in_stock" When set to true, 
 In the original assignment, we only needed to reduce the inventory by one, but I felt it should be a bit more flexible. Let the user purchase multiple of the same item and verify that there is enough inventory to do so.
   
   
-If I were to change anything, I would change inventory and quantity to be floats. Perhaps the store sells things in KGs or grams and that would simply logic. Also, I think a cart should automatically be created by "addToCart" if no cart exists.
+If I were to change anything, inventory and quantity could be floats. Perhaps the store sells things in KGs or grams and that would simply logic. Also, I think a cart should automatically be created by "addToCart" if no cart exists.
     
   
     
